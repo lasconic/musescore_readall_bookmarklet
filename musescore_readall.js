@@ -1,9 +1,11 @@
 (function() {
 
   function readAll() {
-    var newLinks = document.querySelectorAll("div.forum__topic-status--new + div.forum__title div.forum__name a")
-    var newHotLinks = document.querySelectorAll("div.forum__topic-status--hot-new + div.forum__title div.forum__name a")
-    var links = newLinks.concat(newHotLinks);
+    // ES6 has a spread iterator ... Live with it !
+    var links = [
+      ...document.querySelectorAll("div.forum__topic-status--new + div.forum__title div.forum__name a"),
+      ...document.querySelectorAll("div.forum__topic-status--hot-new + div.forum__title div.forum__name a")
+    ]
     for (const a of links) {
         console.log(a.href)
         var sArray = a.href.split("/")
@@ -27,3 +29,5 @@
     }
   });
 })();
+
+
