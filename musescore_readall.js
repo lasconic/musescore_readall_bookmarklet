@@ -1,12 +1,14 @@
 (function() {
 
   function readAll() {
-    const links = document.querySelectorAll("div.forum__topic-status--new + div.forum__title div.forum__name a")
+    var newLinks = document.querySelectorAll("div.forum__topic-status--new + div.forum__title div.forum__name a")
+    var newHotLinks = document.querySelectorAll("div.forum__topic-status--hot-new + div.forum__title div.forum__name a")
+    var links = newLinks.concat(newHotLinks);
     for (const a of links) {
         console.log(a.href)
         var sArray = a.href.split("/")
         var nid = sArray[sArray.length - 1];
-        var readUrl = "https://musescore.org/en/history/"+nid+"/read"
+        var readUrl = "https://musescore.org/en/history/"+nid+"/read";
         console.log(readUrl)
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "POST", readUrl, false ); // false for synchronous request
