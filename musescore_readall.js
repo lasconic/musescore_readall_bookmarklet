@@ -13,9 +13,9 @@
         var readUrl = "https://musescore.org/en/history/"+nid+"/read";
         console.log(readUrl)
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "POST", readUrl, false ); // false for synchronous request
+        xmlHttp.open( "POST", readUrl, true ); // false for synchronous request
         xmlHttp.send( null );
-        console.log(xmlHttp.responseText);
+        //console.log(xmlHttp.responseText);
         }
   }
 
