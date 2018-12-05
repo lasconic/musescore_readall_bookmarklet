@@ -18,9 +18,9 @@
   var original = window.MuseScoreorg;
 
   var self = (window.MuseScoreorg = {
-    add: add,
+    readAll: readAll,
     noConflict: function() {
-      window.SeaDragon = original;
+      window.MuseScoreorg = original;
       return self;
     }
   });
